@@ -10,13 +10,16 @@ block = "battery"
 format = " $icon $percentage "
 full_format = " $icon $percentage "
 not_charging_format = " $icon $percentage "
+interval = 60
 
 [[block]]
 block = "cpu"
+interval = 10
 
 [[block]]
 block = "memory"
 format = " $icon $mem_used_percents.eng(w:2) "
+interval = 10
 
 [[block]]
 block = "sound"
@@ -27,5 +30,5 @@ volume_muted = "[MUTED] "
 
 [[block]]
 block = "time"
-interval = 60
 format = " $timestamp.datetime(f:'%-d.%-m.%Y %-H:%M') "
+interval = 60
