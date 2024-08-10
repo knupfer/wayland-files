@@ -35,6 +35,7 @@ output * bg #000000 solid_color
 
 ### Input configuration
 input type:keyboard xkb_layout knu
+input type:touchpad middle_emulation enabled
 
 ### Key bindings
 #
