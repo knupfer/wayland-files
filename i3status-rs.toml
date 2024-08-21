@@ -20,6 +20,7 @@ interval = 60
 [[block]]
 block = "cpu"
 interval = 10
+format = "$barchart"
 
 [[block]]
 block = "memory"
