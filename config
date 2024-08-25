@@ -7,8 +7,8 @@
 ### Variables
 #
 set $mod Mod4
-set $term foot --override=colors.background=000000 --override=colors.foreground=ffffff --font="DejaVu Sans Mono:size=11"
-set $menu wmenu-run -f "DejaVu Sans Mono 13" -N 000000 -S 00AAAA | xargs swaymsg exec --
+set $term foot --override=colors.background=000000 --override=colors.foreground=ffffff --font="monospace:size=10"
+set $menu wmenu-run -f "monospace 13" -N 000000 -S 00AAAA | xargs swaymsg exec --
 
 default_border pixel 3
 focus_follows_mouse no
@@ -18,6 +18,7 @@ client.focused #aaaaaa #00AAAA #FFFFFF #005555
 ### Output configuration
 #
 output * bg #000000 solid_color
+# output * scale 1
 #
 # Example configuration:
 #
