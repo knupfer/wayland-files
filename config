@@ -7,8 +7,8 @@
 ### Variables
 #
 set $mod Mod4
-set $term foot --override=colors.background=000000 --override=colors.foreground=ffffff --font="monospace:size=10"
-set $menu wmenu-run -f "monospace 13" -N 000000 -S 00AAAA | xargs swaymsg exec --
+# set $term foot --override=colors.background=000000 --override=colors.foreground=ffffff --font="monospace:size=10"
+# set $menu wmenu-run -f "monospace 13" -N 000000 -S 00AAAA | xargs swaymsg exec --
 
 default_border pixel 3
 focus_follows_mouse no
@@ -52,7 +52,7 @@ input type:touchpad middle_emulation enabled
     bindsym XF86MonBrightnessUp exec light -A 1
 
     # Start a terminal
-    bindsym $mod+h exec $term
+    bindsym $mod+h exec foot --override=colors.background=000000 --override=colors.foreground=ffffff --font="monospace:size=10"
 
     # Start emacs
     bindsym $mod+Shift+h exec emacsclient -c --alternate-editor=""
@@ -61,21 +61,11 @@ input type:touchpad middle_emulation enabled
     bindsym $mod+Shift+c kill
 
     # Start your launcher
-    bindsym $mod+p exec $menu
-
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
-    # floating_modifier $mod normal
+    bindsym $mod+p exec wmenu-run -f "monospace 13" -N 000000 -S 00AAAA | xargs swaymsg exec --
 
     # Reload the configuration file
     bindsym $mod+Shift+return reload
 
-
-# Moving around:
-#
     # Move your focus around
     bindsym $mod+i focus left
     bindsym $mod+e focus down
@@ -88,8 +78,6 @@ input type:touchpad middle_emulation enabled
     bindsym $mod+Shift+udiaeresis move up
     bindsym $mod+Shift+a move right
 
-# Workspaces:
-#
     # Switch to workspace
     bindsym $mod+t workspace number 1
     bindsym $mod+r workspace number 2
@@ -101,24 +89,16 @@ input type:touchpad middle_emulation enabled
     bindsym $mod+Shift+n move container to workspace number 3
     bindsym $mod+Shift+s move container to workspace number 4
 
-# Layout stuff:
-#
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
-
-# Resizing containers:
-#
     bindsym $mod+u resize shrink width 10px
     bindsym $mod+period resize grow width 10px
     bindsym $mod+y resize shrink height 10px
     bindsym $mod+comma resize grow height 10px
 
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
 bar {
     position top
-    status_command i3status-rs ~/.sway/i3status-rs.toml
+    status_command i3status-rs config-default.toml
     status_edge_padding 0
     status_padding 0
     colors {
